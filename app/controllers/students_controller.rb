@@ -1,18 +1,24 @@
 class StudentsController < ApplicationController
   
   def index
-    @students = Students.all
+    @students = Student.order(:name).all
   end
-    
+  
   def show
-    @sudent = params[:student]
+    @student = Student.find(params[:id])
   end
   
   def new
-    new_student = Student.new(parmas)
-    student = Student.create
-    house << student
-    redirect to 'idnex'
+    @student = Student.new
   end
   
+  def create
+    @student = Student.new(params[:student])
+    if @student.save
+      redirect_to @student, notice: "#{@student.name} was successfully enrolled"
+    else
+      render action: "new"
+    end
+  end
+
 end
