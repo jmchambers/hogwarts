@@ -8,7 +8,7 @@ describe "students/show" do
 
   it "displays the student's name" do
     render
-    rendered.should match(/#{CGI.escapeHTML @student.name}/)
+    rendered.should match(/#{@student.name}/)
   end
   
 end

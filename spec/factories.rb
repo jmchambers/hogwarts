@@ -3,12 +3,12 @@ FactoryGirl.define do
   # This will guess the User class
   FactoryGirl.define do
     factory :house do
-      name { Faker::Company.name }
+      sequence(:name) {|n| "House #{n}" }
     end
   
     # This will use the User class (Admin would have been guessed)
     factory :student do
-      name { Faker::Name.name }
+      sequence(:name) {|n| "Student #{n}" }
       house
     end
   end

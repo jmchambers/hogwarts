@@ -30,7 +30,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0' #support for BDD
   gem 'database_cleaner'      #ensure the test DB is clean for each test
   gem 'factory_girl_rails'    #help making test objects
-  gem 'faker'                 #realistic content for tests
 end
 
 # To use ActiveModel has_secure_password

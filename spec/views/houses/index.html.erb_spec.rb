@@ -7,7 +7,7 @@ describe "houses/index" do
   it "renders a list of houses" do
     render
     assert_select 'ul.house-list' do |elements|
-      elements.each_with_index { |element, i| assert_select 'li.house-list-item', text: CGI.escapeHTML(@houses[i].name) }
+      elements.each_with_index { |element, i| assert_select 'li.house-list-item', text: @houses[i].name }
     end
   end
   
