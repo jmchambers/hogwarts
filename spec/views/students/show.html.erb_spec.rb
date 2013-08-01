@@ -11,4 +11,9 @@ describe "students/show" do
     rendered.should match(/#{@student.name}/)
   end
   
+  it "displays the student's house" do
+    render
+    rendered.should match(/#{@student.house.name}/)
+  end
+  
 end
