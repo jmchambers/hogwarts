@@ -1,4 +1,14 @@
-<h1>Here are hte students</h2>
-<% @students.each do |studet| %>
-<li><a href=''<%= @student.name %>''</li>
-<%= end %>
+<h1>Students</h1>
+<% if @students.any? %>
+  <ul class="student-list">
+    <% @students.each do |student| %>
+    <li class="student-list-item"><%= link_to student.name, student %></li>
+    <!-- <li class="student-list-item"><%= link_to student.name, student %> (<%# link_to student.house.name, student.house %>)</li> -->
+    <% end %>
+  </ul>
+<% else %>
+  No students have enrolled yet :(
+  <br />
+<% end %>
+<br />
+<%= link_to 'Enroll a new student', new_student_path %>
