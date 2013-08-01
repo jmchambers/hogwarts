@@ -13,3 +13,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore Aptana project file
+/.project
+
+# Ignore the .rvmrc file (this specifies a ruby version and gemset to use with the project)
+/.rvmrc

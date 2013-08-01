@@ -22,6 +22,17 @@ end
 
 gem 'jquery-rails'
 
+group :development, :test do
+  gem 'pry-rails'             #alternative to standard console that is handy for debugging
+  gem 'better_errors'         #does what it says on the tin
+  gem 'binding_of_caller'     #enables REPL in better_errors pages
+  gem 'meta_request'          #Supporting gem for Rails Panel (Google Chrome extension)
+  gem 'rspec-rails', '~> 2.0' #support for BDD
+  gem 'database_cleaner'      #ensure the test DB is clean for each test
+  gem 'factory_girl_rails'    #help making test objects
+  gem 'faker'                 #realistic content for tests
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
