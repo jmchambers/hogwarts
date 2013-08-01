@@ -1,3 +1,4 @@
 class House < ActiveRecord::Base
-  attr_accessible :house_name
+  attr_accessible :name
+  has_many :students, order: "name ASC", inverse_of: :house
 end
