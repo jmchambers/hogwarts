@@ -1,7 +1,7 @@
 class HousesController < ApplicationController
   
   def index
-    @house = House.all
+    @houses = House.order(:name).all
   end
 
 end
