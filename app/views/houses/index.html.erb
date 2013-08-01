@@ -1,3 +1,11 @@
-<%= @houses.each do |h| %>
-  <a href="/houses/<%= house.id %>"><%= house.name %></a>
+<h1>Houses</h1>
+<% if @houses.any? %>
+  <ul class="house-list">
+    <% @houses.each do |house| %>
+      <li class="house-list-item"><%= link_to house.name, house %></li>
+    <% end %>
+  </ul>
+<% else %>
+  There aren't any houses yet! You need to run <pre>rake db:seed</pre>
+  <br />
 <% end %>

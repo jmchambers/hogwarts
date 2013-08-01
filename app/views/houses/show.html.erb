@@ -1,6 +1,15 @@
-<% @house.name %>
-<ul>
-<% @house.students.each |student| %>
-  <li><%= student.name %></li></li>
-</ul>
-<% end %>
+<h1><%= @house.name %> House</h1>
+<p>
+  <% if @house.students.any? %>
+    <b>Students:</b> 
+    <ul class="student-list">
+      <% @house.students.each do |student| %>
+        <li class="student-list-item">
+          <%= link_to student.name, student %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    No students are enrolled in this house.
+  <% end%>
+</p>
