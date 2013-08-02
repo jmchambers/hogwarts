@@ -3,7 +3,7 @@ class Student < ActiveRecord::Base
   include NameNormalization
   
   attr_accessible :name
-  belongs_to :house, inverse_of: :students
+  belongs_to :house, inverse_of: :students, :counter_cache => true
   validates :name, presence: true
   before_create :put_on_the_sorting_hat!
   

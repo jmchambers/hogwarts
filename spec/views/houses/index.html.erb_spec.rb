@@ -13,8 +13,8 @@ describe "houses/index" do
   end
   
   it "renders correctly pluralized student counts" do
-    @houses[0].students.each(&:delete)        #=> 0 students
-    @houses[1].students[1..-1].each(&:delete) #=> 1 student
+    @houses[0].students.each(&:destroy)        #=> 0 students
+    @houses[1].students[1..-1].each(&:destroy) #=> 1 student
     @houses[0..1].each(&:reload)
     render
     rendered.should match(/0 students/)
