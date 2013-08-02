@@ -2,7 +2,7 @@
 <% if @houses.any? %>
   <ul class="house-list">
     <% @houses.each do |house| %>
-      <li class="house-list-item"><%= link_to house.name, house %></li>
+      <li class="house-list-item"><%= link_to house.name, house %> (<%= pluralize(house.students.size, "student") %>)</li>
     <% end %>
   </ul>
 <% else %>

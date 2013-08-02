@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 describe "students/new" do
-  
- context "when "
- 
+
   context "when rendered with a valid model" do
   
     before(:each) do
