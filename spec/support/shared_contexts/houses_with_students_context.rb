@@ -6,6 +6,7 @@ shared_context "houses with students" do
     @houses.each do |house|
       @student_lists[house.id] = FactoryGirl.create_list(:student, 4, house: house)
       @students += @student_lists[house.id]
+      house.reload
     end
   end
 end
