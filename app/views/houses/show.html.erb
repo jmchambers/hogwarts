@@ -1,15 +1,32 @@
-<h1><%= @house.name %> House</h1>
-<p>
-  <% if @house.students.any? %>
-    <b>Students:</b> 
-    <ul class="student-list">
-      <% @house.students.each do |student| %>
-        <li class="student-list-item">
-          <%= link_to student.name, student %>
-        </li>
-      <% end %>
-    </ul>
-  <% else %>
-    No students are enrolled in this house.
-  <% end%>
-</p>
+<section id="house">
+  <div class="row-fluid">
+    <div class="span2">
+      <div class="shield-frame">
+        <%= image_tag "/assets/houses/#{@house.name}.png" %>
+      </div>
+    </div>
+    <div class="span10">
+      <div class="page-header">
+        <h1><%= @house.name %> House</h1>
+      </div>
+      <div class="house-desc">
+        <%= @house.desc %>
+      </div>
+      <br />
+      <p>
+        <% if @house.students.any? %>
+          <h3><%= pluralize(@house.students.size, "student") %>:</h3> 
+          <ul class="student-list">
+            <% @house.students.each do |student| %>
+              <li class="student-list-item">
+                <%= link_to student.name, student %>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          No students are enrolled in this house.
+        <% end%>
+      </p>
+    </div>
+  </div>
+</section>

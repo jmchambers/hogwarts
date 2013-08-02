@@ -11,11 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130802003251) do
+ActiveRecord::Schema.define(:version => 20130802020152) do
 
   create_table "houses", :force => true do |t|
     t.string  "name"
     t.integer "students_count", :default => 0
+    t.string  "desc"
   end
 
   add_index "houses", ["name"], :name => "index_houses_on_name", :unique => true

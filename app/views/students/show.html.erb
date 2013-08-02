@@ -1,12 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<h1><%= @student.name %></h1>
-
-<p>
-  <b>House:</b>
-  <% if @student.house %>
-    <%= link_to @student.house.name, @student.house %>
-  <% else %>
-    Not assigned to a house yet.
-  <% end %>
-</p>
+<section id="student">
+  <div class="page-header">
+    <h1><%= @student.name %></h1>
+  </div>
+  <p>
+    <b>House:</b>
+    <% if @student.house %>
+      <%= link_to @student.house.name, @student.house %>
+    <% else %>
+      Not assigned to a house yet.
+    <% end %>
+  </p>
+</section>

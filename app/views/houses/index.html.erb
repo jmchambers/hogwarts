@@ -1,11 +1,35 @@
-<h1>Houses</h1>
-<% if @houses.any? %>
-  <ul class="house-list">
-    <% @houses.each do |house| %>
-      <li class="house-list-item"><%= link_to house.name, house %> (<%= pluralize(house.students.size, "student") %>)</li>
+<section id="houses">
+  <div class="page-header">
+    <h1>Houses</h1>
+  </div>
+  <div class="row-fluid">
+    
+    <% if @houses.any? %>
+      <ul class="house-list thumbnails">
+        <% @houses.each do |house| %>
+          <li class="house-list-item span3">
+            <div class="thumbnail house-thumbnail">
+              <%= link_to house do %>
+                <div class="shield-frame">
+                  <%= image_tag "/assets/houses/#{house.name}.png" %>
+                </div>
+              <% end %>
+              <header>
+                <%= link_to house do %>
+                  <h4><%= house.name %></h4>
+                <% end %>
+                <span><%= pluralize(house.students.size, "student") %></span>
+              </header>
+              <hr />
+              <p class="house-desc"><%= house.desc %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      There aren't any houses yet! You need to run <code>rake db:seed</code>
+      <br />
     <% end %>
-  </ul>
-<% else %>
-  There aren't any houses yet! You need to run <pre>rake db:seed</pre>
-  <br />
-<% end %>
+    
+  </div>
+</section>

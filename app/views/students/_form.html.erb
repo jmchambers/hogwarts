@@ -1,8 +1,9 @@
-<%= form_for(@student) do |f| %>
+<%= form_for @student, :html => { :class => 'form-horizontal' } do |f| %>
   <% if @student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
-
+    <div id="error_explanation" class="alert alert-error">
+      <p>
+        <b><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</b>
+      </p>
       <ul>
       <% @student.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,11 +12,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit "Enroll now!" %>
+  <div class="form-actions">
+    <%= f.submit "Enroll now!", :class => 'btn btn-success' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                students_path, :class => 'btn' %>
   </div>
 <% end %>

@@ -1,11 +1,15 @@
-== OH NO
+Hogwarts
+=== 
 
-Hogwarts has lost all its magic and now NOTHING WORKS!
+An app for keeping track of house membership at Hogwarts.
 
-This app is riddled with student errors.
+Release Notes
+---
 
-=== First
-Correct all the errors so that this app runs properly.
+This git repo has tagged releases. The current release is v0.0.4. Details of all releases follow:
 
-=== Then
-Implement a sorting hat method to randomly assign new students to one of Hogwarts' four houses.
+* v0.0.0 - original release as cloned from phlco/hogwarts
+* v0.0.1 - all obvious bugs fixed
+* v0,0.2 - sorting hat feature added
+* v0.0.3 - improved functionality as per rails best practice
+* v0.0.4 - added styling

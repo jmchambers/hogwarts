@@ -1,14 +1,29 @@
-<h1>Students</h1>
-<% if @students.any? %>
-  <ul class="student-list">
-    <% @students.each do |student| %>
-    <li class="student-list-item"><%= link_to student.name, student %></li>
-    <!-- <li class="student-list-item"><%= link_to student.name, student %> (<%# link_to student.house.name, student.house %>)</li> -->
-    <% end %>
-  </ul>
-<% else %>
-  No students have enrolled yet :(
-  <br />
-<% end %>
-<br />
-<%= link_to 'Enroll a new student', new_student_path %>
+<section id="students">
+  <div class="row-fluid">
+    <div class="span2">
+      <div class="shield-frame">
+        <%= image_tag "/assets/coat_of_arms.png" %>
+      </div>
+    </div>
+    <div class="span10">
+      <div class="page-header">
+        <h1>Students</h1>
+      </div>
+      <% if @students.any? %>
+        <ul class="student-list">
+          <% @students.each do |student| %>
+            <li class="student-list-item">
+              <%= link_to student.name, student %>
+              <%= link_to student.house.name, student.house, class: "house-link" %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        No students have enrolled yet :(
+        <br />
+      <% end %>
+      <br />
+      <%= link_to "Enroll a new student", new_student_path, class: "btn btn-success" %>
+    </div>
+  </div>
+</section>
